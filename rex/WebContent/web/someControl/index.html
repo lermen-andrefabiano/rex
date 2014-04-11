@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app>
+    <head>
+		<meta charset="utf-8">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="../../lib/js/angular-1.0.8/angular.min-1.0.8.js"></script>		
+		<script src="../../lib/js/angular-1.0.8/angular-resource.min.js"></script>
+		<script src="todo.js"></script>			
+		<link href="../../lib/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+		<link href="../../lib/css/tema.css" rel="stylesheet"></link>	
+		<link href="todo.css" rel="stylesheet"></link>			
+    </head>
+    <body>
+    	<a class="btn btn-inverse" href="../../index.html">Voltar</a> 		
+		<h2>Todo</h2>		
+		<div ng-controller="TodoCtrl">
+			<span>{{remaining()}} of {{todos.length}} remaining</span>
+			[ <a href="" ng-click="archive()">archive</a> ]
+			<ul class="unstyled">
+				<li ng-repeat="todo in todos">
+					<input type="checkbox" ng-model="todo.done">
+					<span class="done-{{todo.done}}">{{todo.text}}</span>
+				</li>
+			</ul>
+			<form ng-submit="addTodo()">
+				<input type="text" ng-model="todoText" size="30" placeholder="add new todo here">
+				<input class="btn-primary" type="submit" value="add">
+			</form>
+		</div>
+    </body>
+</html>

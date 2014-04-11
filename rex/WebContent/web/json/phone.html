@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="phonecatApp">
+	<head>		
+		<meta charset="utf-8">	 
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="../../lib/js/angular-1.0.8/angular.min-1.0.8.js"></script>		
+		<script src="phone.js"></script>	
+		<link href="../../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="../../lib/css/tema.css" rel="stylesheet">
+	</head>
+	<body>		
+		<a class="btn btn-inverse" href="../../index.html">Voltar</a> 		
+		<h1>Json</h1>				
+		<div ng-controller="PhoneListCtrl">
+			<ul>
+				<li ng-repeat="v in phones">
+					<span>{{ v.id }}</span>		
+					<span>{{ v.age }}</span>
+					<span>{{ v.name }}</span>
+					<span>{{ v.snippet }}</span>					
+				</li>
+			</ul>	
+			
+			<span>Autor: {{ autor.name }} {{ autor.lastName }}</span>
+			<span>{{ autor.age }}</span>
+					
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app>
+	<head>		
+		<meta charset="utf-8">	 
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="../../lib/js/angular-1.0.8/angular.min-1.0.8.js"></script>		
+		<script src="form.js"></script>	
+		<link href="../../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="../../lib/css/tema.css" rel="stylesheet">
+	</head>
+	<body>		
+		<a class="btn btn-inverse" href="../../index.html">Voltar</a> 		
+		<h1>Form</h1>				
+		<form name="myForm" ng-controller="Ctrl" ng-submit="add()">
+			
+			id: 
+			<input name="inputId" ng-model="userId" required/> 
+			<span class="error" ng-show="myForm.inputId.$error.required">Required!</span><br>
+		
+			userType: 
+			<input name="input" ng-model="userType" required/> 
+			<span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+			
+			<input class="btn-primary" type="submit" value="add">
+		</form>
+	</body>
+</html>
